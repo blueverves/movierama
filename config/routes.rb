@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  require "resque_web"
+
   resource :session, only: %i(create destroy)
   get '/auth/:provider/callback', to: 'sessions#create'
 
@@ -9,6 +10,11 @@ Rails.application.routes.draw do
 
   resources :users, only: %i() do
     resources :movies, only: %(index), controller: 'movies'
+  end
+
+  resque_web_constraint = lambda { |request| request.remote_ip == '127.0.0.1' }
+  constraints resque_web_constraint do
+    mount ResqueWeb::Engine => "/resque_web"
   end
 
   root 'movies#index'

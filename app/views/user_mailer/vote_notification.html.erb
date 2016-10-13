@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>Hey <%= @user.name %></h1>
+        <p>
+           The movie '<%= @movie.title %>' you posted has been voted with '<%= @vote %>'.<br>
+        </p>
+        <p>
+            To login to the site, just follow this link: <%= @url %>.
+        </p>
+        <p>Thanks for posting, have a great day!</p>
+    </body>
+</html>

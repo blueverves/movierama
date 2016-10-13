@@ -48,6 +48,13 @@ Run the SSL tunnel in a terminal:
 
     $ tunnelss 24676 24675
 
+To send out emails via Gmail set these environment variables
+
+    export GMAIL_USERNAME=[email]
+    export GMAIL_PASSWORD=[password]
+
+Otherwise set config.action_mailer.delivery_method = :file in the development.rb.
+
 Run the Resque worker to enable notifications on movie votes 
 
     $ bundle exec rake resque:work QUEUE='votes_queue'

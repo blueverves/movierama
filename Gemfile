@@ -22,6 +22,12 @@ gem 'rack-ssl'
 gem 'ohm'
 gem 'ohm-contrib'
 
+# Queuing with Redis
+gem 'resque'
+
+# Monitoring interface for Resque
+gem 'resque-web', require: 'resque_web'
+
 # ♥︎ thin models
 gem 'draper'
 

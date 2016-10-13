@@ -48,6 +48,14 @@ Run the SSL tunnel in a terminal:
 
     $ tunnelss 24676 24675
 
+Run the Resque worker to enable notifications on movie votes 
+
+    $ bundle exec rake resque:work QUEUE='votes_queue'
+
+Run ResqueWeb to monitor the status of the queues
+
+    https://127.0.0.1:24676/resque_web/
+
 Run the application on the corresponding port:
 
     $ ./bin/rails server -p 24675
